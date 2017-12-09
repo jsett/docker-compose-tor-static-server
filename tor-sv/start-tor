@@ -7,6 +7,6 @@ env | grep -o $REGEX | sed -e "s/_TCP=tcp:\/\// /" -e "s/:/ /" | awk '{ printf "
 
 echo `tail /etc/torrc`
 
-/bin/show-serverlink &
+/bin/sleep 5 && /bin/show-serverlink &
 
 /usr/local/bin/tor -f /etc/torrc
