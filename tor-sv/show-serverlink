@@ -1,0 +1,5 @@
+#!/bin/bash
+
+HOSTNAME='/var/lib/tor/hidden-service/hostname'
+
+echo 'The onion name is' $(cat $HOSTNAME)

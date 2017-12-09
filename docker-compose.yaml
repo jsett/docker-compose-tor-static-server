@@ -1,0 +1,15 @@
+myweb:
+  image: nginx
+  volumes:
+   - ./static:/usr/share/nginx/html
+  expose:
+   - "80"
+  environment:
+   - NGINX_HOST=foobar.com
+   - NGINX_PORT=80
+  command: /bin/bash -c "sleep 3 && nginx -g 'daemon off;'"
+
+tor:
+  build: tor-sv/
+  links:
+    - myweb:web
